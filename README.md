@@ -13,7 +13,7 @@ This action saves number of solved problems for each day. It is stored `data.jso
 **Required** The github token. You can use `${{ secrets.GITHUB_TOKEN }}` which is automatically created.
 
 ## Example usage
-
+```yaml
 on:
   schedule:
     # * is a special character in YAML so you have to quote this string
@@ -31,3 +31,4 @@ jobs:
         with:
           username: ${{ secrets.LEETCODE_USERNAME }}
           github-token: ${{ secrets.GITHUB_TOKEN }}
+```
