@@ -1,0 +1,17 @@
+on:
+  schedule:
+    # * is a special character in YAML so you have to quote this string
+    - cron:  '5 16 * * *'
+
+jobs:
+  leetcode_solved_problem_tracker:
+    runs-on: ubuntu-latest
+    name: Save each day's solved problem counts
+    steps:
+      - uses: actions/checkout@v2
+      - name: leetcode-solved-problem-tracker step
+        id: hello
+        uses: nurgasemetey/leetcode-solved-problem-tracker@v1.1
+        with:
+          username: ${{ secrets.LEETCODE_USERNAME }}
+          github-token: ${{ secrets.GITHUB_TOKEN }}
