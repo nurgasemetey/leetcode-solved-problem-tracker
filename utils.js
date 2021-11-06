@@ -34,7 +34,7 @@ const addNewEntry = (buff, date, val) => {
 
 async function start() {
     const buff = fs.readFileSync('tmp/test.json');
-    var userData = await getUser("archit91");
+    var userData = await getUser("someuser");
     // console.log(JSON.stringify(userData));
     const newBuff = addNewEntry(buff, new Date().toISOString().slice(0,10), userData["matchedUser"]["submitStats"]["acSubmissionNum"][0]["count"]);
     // console.log(newBuff);
