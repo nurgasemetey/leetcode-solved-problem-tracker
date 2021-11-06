@@ -1,0 +1,14 @@
+name: 'leetcode-solved-problem-tracker'
+description: 'leetcode-solved-problem-tracker'
+inputs:
+  username:
+    description: 'username'
+    required: true
+    default: ''
+  github-token:
+    description: The GitHub token used to create an authenticated client
+    default: ${{ github.token }}
+    required: false
+runs:
+  using: 'node12'
+  main: 'index.js'
