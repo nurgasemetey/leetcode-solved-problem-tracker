@@ -36,7 +36,7 @@ Sample `data.json`
 on:
   schedule:
     # * is a special character in YAML so you have to quote this string
-    - cron:  '30 5,17 * * *'
+    - cron:  '0 3 * * *' # according to UTC
 
 jobs:
   leetcode_solved_problem_tracker:
@@ -58,7 +58,7 @@ or
 on:
   schedule:
     # * is a special character in YAML so you have to quote this string
-    - cron:  '30 5,17 * * *'
+    - cron:  '0 3 * * *' # according to UTC
 
 jobs:
   leetcode_solved_problem_tracker:
