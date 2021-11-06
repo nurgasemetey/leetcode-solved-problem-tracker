@@ -1,7 +1,7 @@
 on:
   schedule:
     # * is a special character in YAML so you have to quote this string
-    - cron:  '13 16 * * *'
+    - cron:  '21 16 * * *'
 
 jobs:
   leetcode_solved_problem_tracker:
@@ -11,7 +11,7 @@ jobs:
       - uses: actions/checkout@v2
       - name: leetcode-solved-problem-tracker step
         id: hello
-        uses: nurgasemetey/leetcode-solved-problem-tracker@v1.3
+        uses: nurgasemetey/leetcode-solved-problem-tracker@v1.4
         with:
           username: ${{ secrets.LEETCODE_USERNAME }}
           github-token: ${{ secrets.GITHUB_TOKEN }}
