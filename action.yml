@@ -1,5 +1,8 @@
 name: 'leetcode-solved-problem-tracker'
 description: 'leetcode-solved-problem-tracker'
+branding:
+  icon: 'activity'
+  color: 'green'
 inputs:
   username:
     description: 'username'
