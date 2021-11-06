@@ -27,7 +27,7 @@ jobs:
       - uses: actions/checkout@v2
       - name: leetcode-solved-problem-tracker step
         id: hello
-        uses: nurgasemetey/@v1.49
+        uses: nurgasemetey/leetcode-solved-problem-tracker@v1.4
         with:
           username: ${{ secrets.LEETCODE_USERNAME }}
           github-token: ${{ secrets.GITHUB_TOKEN }}
