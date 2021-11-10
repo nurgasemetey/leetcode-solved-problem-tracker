@@ -33,10 +33,11 @@ const addNewEntry = (buff, date, val) => {
 }
 
 async function start() {
-    const buff = fs.readFileSync('tmp/test.json');
-    var userData = await getUser("someuser");
+    // const buff = fs.readFileSync('tmp/test.json');
+    var userData = await getUser("vanessa89");
+    console.log(userData);
     // console.log(JSON.stringify(userData));
-    const newBuff = addNewEntry(buff, new Date().toISOString().slice(0,10), userData["matchedUser"]["submitStats"]["acSubmissionNum"][0]["count"]);
+    // const newBuff = addNewEntry(buff, new Date().toISOString().slice(0,10), userData["matchedUser"]["submitStats"]["acSubmissionNum"][0]["count"]);
     // console.log(newBuff);
     // var image = await createImage(["2021-11-01", "2021-11-02","2021-11-03","2021-11-04", "2021-11-05"], [1,2,5,5,5]);
 }

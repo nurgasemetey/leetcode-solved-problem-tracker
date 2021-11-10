@@ -9,8 +9,23 @@ async function start() {
   try {
     // `who-to-greet` input defined in action metadata file
     const username = core.getInput('username');
-    var userData = await getUser(username);
+    if(!username) {
+      core.setFailed("No username");
+      process.exit(1);
+    }
+
     const token = core.getInput("github-token");
+    if(!token) {
+      core.setFailed("No token");
+      process.exit(1);
+    }
+
+    var userData = await getUser(username);
+    if(!userData.matchedUser) {
+      core.setFailed("No such user");
+      process.exit(1);
+    }
+
     const octokit = github.getOctokit(token);
 
     try {
