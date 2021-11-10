@@ -1,6 +1,6 @@
 # leetcode-solved-problem-tracker action
 
-This action saves number of solved problems for each day. It is stored `data.json`
+This action saves number of solved problems for each day. Data are stored in `data.json`
 
 Sample `data.json`
 
