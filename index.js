@@ -25,7 +25,7 @@ async function start() {
       core.setFailed("No such user");
       process.exit(1);
     }
-
+    console.log("fetched user data");
     const octokit = github.getOctokit(token);
 
     try {
@@ -33,18 +33,20 @@ async function start() {
         ...github.context.repo,
         path: 'data.json',
       })
+      console.log("fetched data.json from repo");
       // console.log(fileResult);
 
-      console.log(JSON.parse(Buffer.from(fileResult.data.content, 'base64')).toString());
+      // console.log(JSON.parse(Buffer.from(fileResult.data.content, 'base64')).toString());
       const newBuff = addNewEntry(Buffer.from(fileResult.data.content, 'base64'), new Date().toISOString().slice(0,10), userData["matchedUser"]["submitStats"]["acSubmissionNum"][0]["count"]);
 
       await octokit.rest.repos.createOrUpdateFileContents({
         ...github.context.repo,
         sha: fileResult.data.sha,
         path: 'data.json',
-        message: 'create testfile',
+        message: 'update data.json',
         content: newBuff,
       });
+      console.log("updated data.json in repo");
 
     } catch (error) {
       console.error(error);
@@ -56,9 +58,10 @@ async function start() {
           ...github.context.repo,
           sha: github.context.sha,
           path: 'data.json',
-          message: 'create testfile',
+          message: 'create data.json',
           content: newBuff,
         });
+        console.log("created data.json in repo");
       }
     }
     
