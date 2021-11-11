@@ -46,7 +46,7 @@ jobs:
       - uses: actions/checkout@v2
       - name: leetcode-solved-problem-tracker step
         id: hello
-        uses: nurgasemetey/leetcode-solved-problem-tracker@v1.5
+        uses: nurgasemetey/leetcode-solved-problem-tracker@v1.6
         with:
           username: ${{ secrets.LEETCODE_USERNAME }} # if you want to hide your username
           github-token: ${{ secrets.GITHUB_TOKEN }} # no need to generate token, it is generated automatically when you use action
@@ -68,7 +68,7 @@ jobs:
       - uses: actions/checkout@v2
       - name: leetcode-solved-problem-tracker step
         id: hello
-        uses: nurgasemetey/leetcode-solved-problem-tracker@v1.5
+        uses: nurgasemetey/leetcode-solved-problem-tracker@v1.6
         with:
           username: YOUR_LEETCODE_USERNAME
           github-token: ${{ secrets.GITHUB_TOKEN }} # no need to generate token, it is generated automatically when you use action
